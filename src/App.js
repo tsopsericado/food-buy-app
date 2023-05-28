@@ -1,10 +1,11 @@
 import React from "react";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <>
-    <h1 class="bg-black text-red text-white text-4xl font-bold">Welcome to Africa Flavour Store </h1>
-    </>
+    <div>
+      <Navbar/>
+    </div>
   )
 }
  export default App
