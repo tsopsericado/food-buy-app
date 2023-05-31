@@ -1,22 +1,28 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import HeadlineCards from "./components/HeadlineCards";
-import Food from "./components/Food";
+import FoodDetails from "./pages/FoodDetails";
+import AddToCart from "./pages/AddToCart";
+import Landing from "./pages/Landing";
+import UserInfos from "./components/UserInfos";
+import Payment from "./components/Payment";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <Hero />
-      <HeadlineCards/>
-      <Food/>
+      <Router>
+        <Routes>
+          <Route index element={<Landing />} />
+          <Route path="/fooddetails/:id" element={<FoodDetails />} />
+          <Route Path="/addToCart" element={<AddToCart />} />
+          <Route path="/userinfos" element={<UserInfos />} />
+          <Route path="/payment" element={<Payment />} />
+        </Routes>
+      </Router>
     </div>
   );
-}
- export default App
-
-
+};
+export default App;
 
 // import logo from './logo.svg';
 // import './App.css';

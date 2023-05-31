@@ -30,11 +30,11 @@ function HeadlineCards() {
             Order now
           </button>
         </div>
-        <img
+        { <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
           src="https://images.pexels.com/photos/9673721/pexels-photo-9673721.jpeg?auto=compress&cs=tinysrgb&w=600"
           alt="/"
-        />
+        /> }
       </div>
 
       {/* {Card} */}
@@ -49,11 +49,12 @@ function HeadlineCards() {
             Order now
           </button>
         </div>
-        <img
+        { <img
           className="max-h-[160px] md:max-h-[200px] w-full object-cover rounded-xl"
           src="https://images.pexels.com/photos/3743537/pexels-photo-3743537.jpeg?auto=compress&cs=tinysrgb&w=600"
           alt="/"
-        />
+        /> }
+        {/* <img src="images/Ekwang.jpg" alt="" /> */}
       </div>
     </div>
   );
