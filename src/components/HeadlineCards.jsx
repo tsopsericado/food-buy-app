@@ -54,7 +54,6 @@ function HeadlineCards() {
           src="https://images.pexels.com/photos/3743537/pexels-photo-3743537.jpeg?auto=compress&cs=tinysrgb&w=600"
           alt="/"
         /> }
-        {/* <img src="images/Ekwang.jpg" alt="" /> */}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import Food from "../components/Food";
 
 export default function Landing() {
   return (
-    <div className="landing_page">
+    <div className="landing_page">  
       <Navbar />
       <Hero />
       <HeadlineCards />

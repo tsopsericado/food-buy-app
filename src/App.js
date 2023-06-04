@@ -11,12 +11,28 @@ const App = () => {
   return (
     <div>
       <Router>
+        <div>
+          <ul className="bg-blue-100 flex-row-reverse px-10 flex space-x-3">
+            <li className="py-4 px-4 text-xl italic">
+              <a href="/">Landing</a>
+            </li>
+            <li className="py-4 px-4 text-xl italic">
+              <a href="/fooddetails/id">FoodDetails</a>
+            </li>
+            <li className="py-4 px-4 text-xl italic">
+              <a href="/userinfos">UserInfos</a>
+            </li>
+            <li className="py-4 px-4 text-xl italic">
+              <a href="/payment">Payment</a>
+            </li>
+          </ul>
+        </div>
         <Routes>
           <Route index element={<Landing />} />
           <Route path="/fooddetails/:id" element={<FoodDetails />} />
           <Route path="/userinfos" element={<UserInfos />} />
           <Route path="/payment" element={<Payment />} />
-          <Route path="/paypal" element={<Paypal/>}/>
+          <Route path="/paypal" element={<Paypal />} />
         </Routes>
       </Router>
     </div>

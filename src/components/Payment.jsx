@@ -1,29 +1,84 @@
-// import React, { useState } from 'react'
-// // import { useNavigate } from 'react-router-dom';
+import { Formik, Field } from "formik";
+import React from 'react';
+import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
+// import { images } from "react-payment-inputs/images"  ;
 
+function Payment() {
+  const {
+    meta,
+    getCardImageProps,
+    getCardNumberProps,
+    getExpiryDateProps,
+    getCVCProps,
+    wrapperProps
+  } =usePaymentInputs();
+  return (
+    <Formik
+      initialValues={{
+        cardNumber: "",
+        expiryNumber: "",
+        cvc: "",
+      }}
+      onSubmit={(data) => console.log(data)}
+      validate={() => {
+        let errors = {};
+        if (meta.erroredInputs.cardNumber) {
+          errors.cardNumber = meta.erroredInputs.cardNumber;
+        }
+        if (meta.erroredInputs.expiryDate) {
+          errors.expiryDate = meta.erroredInputs.expiryDate;
+        }
+        if (meta.erroredInputs.cvc) {
+          errors.cvc = meta.erroredInputs.cvc;
+        }
+        return errors;
+      }}
+    >
+      {({ handleSubmit }) => (
+        <form onSubmit={handleSubmit}>
+          <div>
+            <PaymentInputsWrapper {...wrapperProps}>
+              <svg {...getCardImageProps({})} />
+              <label htmlFor="cardnum">Card Number:</label>
+              <Field name="cardNumber">
+                {({ Field }) => (
+                  <input
+                    {...getCardNumberProps({
+                      // onblur: Field.onblur,
+                      // onChange: Field.onChange,
+                    })}
+                  />
+                )}
+              </Field>
+              <label htmlFor="expirydate">Expiry Data:</label>
+              <Field name="expiryDate">
+                {({ field }) => (
+                  <input
+                    {...getExpiryDateProps({
+                      // onBlur: field.onBlur,
+                      // onChange: field.onChange,
+                    })}
+                  />
+                )}
+              </Field>
+              <label htmlFor="cvc">CVC:</label>
+              <Field name="cvc">
+                {({ field }) => (
+                  <input
+                    {...getCVCProps({
+                      // onBlur: field.onBlur,
+                      // onChange: field.onChange,
+                    })}
+                  />
+                )}
+              </Field>
+            </PaymentInputsWrapper>
+          </div>
+          <button type="sbmit">Pay</button>
+        </form>
+      )}
+    </Formik>
+  );
+}
 
-// function Payment() {
-//     const [ checkout, setCheckout] = useState(false);
-
-
-//     // const navigate = useNavigate()
-//   return (
-//     <div className='bg-gray-300 flex-col justify-center text-center border border-red my-20 h-3'>
-//       <p className="text-2xl"> Click To Make your payment</p>
-
-//       {checkout ? (
-//       <Paypal/>
-//       ) : ( 
-
-
-//         <button onClick= {() =>{ 
-//           setCheckout(true)
-//       }} class="border bg-orange-300 py-1.5 px-20 rounded border-violet-600 my-5 focus:outline-none focus:border-teal-500 ">
-//         Checkout
-//       </button>
-//       ) }
-//     </div>
-//   );
-// }
-
-// export default Payment
+export default Payment

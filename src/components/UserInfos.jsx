@@ -109,7 +109,7 @@ export default function Login() {
 
             <div className="flex space-x-4">
               <div class="w-1/2">
-                <label htmlFor="location" class="float-left py-2">
+                <label htmlFor="phonenumber" class="float-left py-2">
                   Phone Number
                 </label>
                 <Field

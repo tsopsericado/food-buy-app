@@ -14,25 +14,35 @@ function FoodDetails() {
     const [food] = data.filter((item) => item.id === +params.id);
 
     setCurrentFood(food);
-  });
+  }, [params]);
 
   return (
-      <div className="flex justify-center border-orange-200 bg-red-200" >
-        <p>Order and get delivered in less time</p>
-        <div>
-          <ul>
-            <img src={currentFood?.image} height="100" width="250" className="rounded" />
-            <li>Food.name: {currentFood?.name}</li>
-            <li>calories:{currentFood?.calories}</li>
-            <li>price: {currentFood?.price}</li>
-            <li>Description: {currentFood?.description}</li>
-          </ul>
-          <button onClick={() =>{
+    <div className="flex justify-center border-orange-200 bg-red-200">
+      <p>Order and get delivered in less time</p>
+      <div className="float-left">
+        <img
+          src={currentFood?.image}
+          height="100"
+          width="250"
+          className="rounded"
+        />
+        <ul>
+          <li>Food.name: {currentFood?.name}</li>
+          <li>calories:{currentFood?.calories}</li>
+          <li>price: {currentFood?.price}</li>
+          <li>Description: {currentFood?.description}</li>
+        </ul>
+        <button
+          onClick={() => {
             navigate("/userinfos");
-          }} type='submit' className="bg-orange-400 ">Purchase</button>
-        </div>
+          }}
+          type="submit"
+          className="bg-orange-400 "
+        >
+          Purchase
+        </button>
       </div>
-
+    </div>
   );
 }
 
