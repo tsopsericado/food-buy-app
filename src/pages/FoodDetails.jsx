@@ -1,13 +1,15 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { data } from "../data/data";
+import { AppContext } from "../context/context";
 
 function FoodDetails() {
   // const handleclick = handleClick()
   const [currentFood, setCurrentFood] = React.useState(null);
   const params = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { name } = useContext(AppContext);
 
   React.useEffect(() => {
     console.log(" this params", params, params.id);

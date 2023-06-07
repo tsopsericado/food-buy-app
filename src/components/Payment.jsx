@@ -36,7 +36,7 @@ function Payment() {
     >
       {({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="flex bg-red-300 justify-center m-15">
             <PaymentInputsWrapper {...wrapperProps}>
               <svg {...getCardImageProps({})} />
               <label htmlFor="cardnum">Card Number:</label>
@@ -74,7 +74,7 @@ function Payment() {
               </Field>
             </PaymentInputsWrapper>
           </div>
-          <button type="sbmit">Pay</button>
+          <button type="submit"  className="bg-orange-300 py-2 p-6 flex justify-center">Pay</button>
         </form>
       )}
     </Formik>

@@ -26,12 +26,12 @@ export default function Login() {
       .email("Invalid email adress"),
   });
 
-  const handleSubmit = (values) => {
-    localStorage.setItem("userData", JSON.stringify(values));
-  };
+  // const handleSubmit = (values) => {
+  //   localStorage.setItem("userData", JSON.stringify(values));
+  // };
 
   return (
-    <div class="bg-violet-100">
+    <div className="bg-violet-100">
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => {
@@ -42,104 +42,103 @@ export default function Login() {
         // onSubmit={handleSubmit}
       >
         {() => (
-          <Form class="px-4 py-6 my-32 max-w-3xl mx-auto space-y-6 border-x-orange-500">
+          <Form className="px-4 py-6 my-32 max-w-3xl mx-auto space-y-6 border-x-orange-500">
             <div>
-              <h1 class="text-3xl italic bord">Users details </h1>
-              <p class="text-xl text-gray-1000">
+              <h1 className="text-3xl italic bold">Users details </h1>
+              <p className="text-xl text-gray-1000">
                 Order now and get get delivered in less time
               </p>
             </div>
-            <div class="flex space-x-4">
-              <div class="w-1/2">
-                <label htmlFor="firstname" class="float-left py-2">
+            <div className="flex space-x-4">
+              <div className="w-1/2">
+                <label htmlFor="firstname" className="float-left py-2">
                   First Name
                 </label>
                 <Field
                   name="firstname"
                   placeholder="firstname"
-                  className="myField"
-                  class="border border-gray-400 block  py-2 px-4 w-full rounded  focus:outline-none focus:border-teal-500"
+                  className="MyField border border-gray-400 block  py-2 px-4 w-full rounded  focus:outline-none focus:border-teal-500"
                 />
                 <div className="error">
                   <ErrorMessage
                     name="firstname"
                     component="span"
-                    class="float-left py-2 text-red-600"
+                    className="float-left py-2 text-red-600"
                   />
                 </div>
               </div>
 
-              <div class="w-1/2">
-                <label htmlFor="lastname" class="float-left py-2">
+              <div className="w-1/2">
+                <label htmlFor="lastname" className="float-left py-2">
                   Last Name
                 </label>
                 <Field
                   name="lastname"
                   placeholder="lastname"
-                  class="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+                  className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
                 />
                 <div className="error">
                   <ErrorMessage
                     name="lastname"
                     component="span"
-                    class="float-left py-2 text-red-600"
+                    className="float-left py-2 text-red-600"
                   />
                 </div>
               </div>
             </div>
 
             <div>
-              <label htmlFor="email" class="float-left py-2">
+              <label htmlFor="email" className="float-left py-2">
                 Email
               </label>
               <Field
                 name="email"
                 placeholder="email"
                 type="email"
-                class="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+                className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
               />
               <div className="error">
                 <ErrorMessage
                   name="email"
                   component="span"
-                  class="float-left py-2 text-red-600"
+                  className="float-left py-2 text-red-600"
                 />
               </div>
             </div>
 
             <div className="flex space-x-4">
-              <div class="w-1/2">
-                <label htmlFor="phonenumber" class="float-left py-2">
+              <div className="w-1/2">
+                <label htmlFor="phonenumber" className="float-left py-2">
                   Phone Number
                 </label>
                 <Field
                   name="phone"
                   type="number"
                   placeholder="phone number"
-                  class="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+                  className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
                 />
                 <div className="error">
                   <ErrorMessage
                     name="phone"
                     component="span"
-                    class="float-left py-2 text-red-600"
+                    className="float-left py-2 text-red-600"
                   />
                 </div>
               </div>
 
-              <div class="w-1/2">
-                <label htmlFor="location" class="float-left py-2">
+              <div className="w-1/2">
+                <label htmlFor="location" className="float-left py-2">
                   Location
                 </label>
                 <Field
                   name="location"
                   placeholder="location"
-                  class="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+                  className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
                 />
                 <div className="error">
                   <ErrorMessage
                     name="location"
-                    class="float-left py-2 text-red-600"
+                    className="float-left py-2 text-red-600"
                   />
                 </div>
               </div>
@@ -148,7 +147,7 @@ export default function Login() {
             <button
               type="submit"
               onSubmit={onSubmit}
-              class="border bg-orange-300 py-1.5 px-20 rounded border-violet-600 my-5 focus:outline-none focus:border-teal-500 "
+              className="border bg-orange-300 py-1.5 px-20 rounded border-violet-600 my-5 focus:outline-none focus:border-teal-500 "
             >
               <a href="/payment">Submit</a>
             </button>

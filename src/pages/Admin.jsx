@@ -11,6 +11,8 @@ function Admin() {
     description: "",
   });
 
+  console.log(setFormData);
+
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -42,87 +44,110 @@ function Admin() {
       !formData.description
     ) {
       alert("input all fields");
+      console.log("fool");
       return;
     }
+
     const localdata = JSON.parse(localStorage.getItem("data")) || [];
-    const neWid = localdata.pop()?.id + 1 || 1;
+    const id = localdata.length > 0 ? localdata.pop()?.id + 1 : 1;
 
-    localStorage.setItem(
-      "data",
-      JSON.stringify([...localdata, { ...formData, id: neWid }])
-    );
+    const newData =
+      localdata.length > 0
+        ? localdata.push({ ...formData, id })
+        : [{ ...formData, id }];
 
-    setFormData(null);  
+    localStorage.setItem("data", JSON.stringify(newData));
+
+    setFormData(null);
   };
 
   return (
     <div className="bg-red-300 ">
-      <p className="text-2xl bold underline">Admin Dashboard</p>
+      <h1 className="text-2xl bold underline text-center py-5">
+        Admin Dashboard
+      </h1>
+      <p className="text-xl bold 300 text-gray-1000 text-center italic">
+        Create a new product
+      </p>
 
       <form
         onSubmit={handleSubmit}
-        className="px-5 py-6 my-32 max-w-3xl mx-auto space-y-6 border-x-orange-500"
+        className="px-5 py-5 my-32 max-w-x2l space-y-5 flex space-x-2 justify-center border-r-slate-500"
       >
-        <ul>
-          <p className="text-xl text-gray-1000">Create a new product</p>
-          <li>
-            <input
-              type="file"
-              name="avatar"
-              id="avatar"
-              placeholder="images"
-              onChange={handleImageUpload}
-            />
-          </li>
-          <li>
+        <ul className="justify-center">
+          <input
+            type="file"
+            name="avatar"
+            id="avatar"
+            placeholder="images"
+            className=""
+            onChange={handleImageUpload}
+          />
+          <div className="py-5 ">
+            <label htmlFor="name" className="text-2xl px-2">
+              Name:
+            </label>
             <input
               type="text"
               name="name"
               id="name"
               placeholder="name"
+              className="py-3 px-4 rounded"
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, name: e.target.value }))
               }
             />
-          </li>
-          <li>
+            <label htmlFor="price" className="text-2xl px-2">
+              Price:
+            </label>
             <input
               type="number"
               name="price"
               id="price"
               placeholder="price"
+              className="py-3 px-4 rounded"
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, price: e.target.value }))
               }
             />
-          </li>
-          <li>
-            <input
-              type="text"
-              name="calorie"
-              id="calorie"
-              placeholder="calories"
-              onChange={(e) =>
-                setFormData((prev) => ({ ...prev, calories: e.target.value }))
-              }
-            />
-          </li>
-          <li>
-            <input
-              type="text"
-              name="category"
-              id="category"
-              placeholder="Category"
-              onChange={(e) =>
-                setFormData((prev) => ({ ...prev, category: e.target.value }))
-              }
-            />
-          </li>
-          <li>
+          </div>
+
+          <label htmlFor="calories" className="text-2xl px-2">
+            Calories:
+          </label>
+          <input
+            type="text"
+            name="calories"
+            id="calorie"
+            placeholder="calories"
+            className="py-3 px-4 rounded"
+            onChange={(e) =>
+              setFormData((prev) => ({ ...prev, calories: e.target.value }))
+            }
+          />
+
+          <label htmlFor="category" className="text-2xl px-2">
+            Category:
+          </label>
+          <input
+            type="text"
+            name="category"
+            id="category"
+            placeholder="Category"
+            className="py-3 px-4 rounded"
+            onChange={(e) =>
+              setFormData((prev) => ({ ...prev, category: e.target.value }))
+            }
+          />
+          <div className="">
+            <label htmlFor="fooddescription" className="text-2xl px-2">
+              Food Description:
+            </label>
             <input
               type="text"
               name="food_description"
               placeholder="Food description"
+              className="py-3 rounded "
               onChange={(e) =>
                 setFormData((prev) => ({
                   ...prev,
@@ -130,9 +155,13 @@ function Admin() {
                 }))
               }
             />
-          </li>
-          <div>
-            <button type="submit"  className="border bg-orange-300 py-1.5 px-20 rounded border-red-600 my-5 focus:outline-none focus:border-teal-500">Upload</button>
+
+            <button
+              onClick={handleSubmit}
+              className="border bg-orange-300 py-3 px-20 rounded border-purple-600 my-5 mx-5 focus:outline-none focus:border-teal-500"
+            >
+              Upload
+            </button>
           </div>
         </ul>
       </form>
