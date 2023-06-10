@@ -1,28 +1,32 @@
-import React, { useState } from "react";
-import { data } from "../data/data.js";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Food() {
   let navigate = useNavigate();
 
-  function navig () {
+  function navig() {
     navigate("/fooddetails");
   }
-  const [foods, setFoods] = useState(data);
+  const [foods, setFoods] = useState([]);
+
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem("foodData"));
+    setFoods([...localData]);
+  }, []);
 
   // Filter type all
   const filterType = (category) => {
-    setFoods( 
-      data.filter((item) => {
+    setFoods(
+      foods.filter((item) => {
         return item.category === category;
       })
     );
-  };  
+  };
 
   //Filter by Price
   const filterPrice = (price) => {
     setFoods(
-      data.filter((item) => {
+      foods.filter((item) => {
         return item.price === price;
       })
     );
@@ -41,7 +45,7 @@ function Food() {
           <p className="font-bold text-gray-700">Filter Type</p>
           <div className="flex justify-between flex-wrap">
             <button
-              onClick={() => setFoods(data)}
+              // onClick={() => setFoods(data)}
               className="m-1 border-orange-600 text-orange hover:bg-orange-600 hover:text-white"
             >
               All
@@ -92,12 +96,12 @@ function Food() {
               className="m-1 border-orange-600 text-orange hover:bg-orange-600 hover:text-white"
             ></button>
           </div>
-        </div>
+        </div>  
       </div>
 
       {/* {Display Foods} */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
-        {foods.map((item, index) => (
+        {foods?.map((item, index) => (
           <div
             key={index}
             className="border shadow-lg rounded-lg hover:scale-105 duration-300"

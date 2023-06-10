@@ -2,14 +2,14 @@
 import React, { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { data } from "../data/data";
-import { AppContext } from "../context/context";
+import { AppContext } from "../context/Context";
 
 function FoodDetails() {
   // const handleclick = handleClick()
   const [currentFood, setCurrentFood] = React.useState(null);
   const params = useParams();
   const navigate = useNavigate();
-  const { name } = useContext(AppContext);
+  // const { name } = useContext(AppContext);
 
   React.useEffect(() => {
     console.log(" this params", params, params.id);
@@ -29,7 +29,7 @@ function FoodDetails() {
           className="rounded"
         />
         <ul>
-          <li>Food.name: {currentFood?.name}</li>
+          <li>Food name: {currentFood?.name}</li>
           <li>calories:{currentFood?.calories}</li>
           <li>price: {currentFood?.price}</li>
           <li>Description: {currentFood?.description}</li>

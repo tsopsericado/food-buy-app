@@ -1,5 +1,5 @@
 import { Formik, Field } from "formik";
-import React from 'react';
+import React from "react";
 import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
 // import { images } from "react-payment-inputs/images"  ;
 
@@ -10,8 +10,8 @@ function Payment() {
     getCardNumberProps,
     getExpiryDateProps,
     getCVCProps,
-    wrapperProps
-  } =usePaymentInputs();
+    wrapperProps,
+  } = usePaymentInputs();
   return (
     <Formik
       initialValues={{
@@ -37,6 +37,7 @@ function Payment() {
       {({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           <div className="flex bg-red-300 justify-center m-15">
+            <h1 className="mp">Make your payment</h1>
             <PaymentInputsWrapper {...wrapperProps}>
               <svg {...getCardImageProps({})} />
               <label htmlFor="cardnum">Card Number:</label>
@@ -74,11 +75,16 @@ function Payment() {
               </Field>
             </PaymentInputsWrapper>
           </div>
-          <button type="submit"  className="bg-orange-300 py-2 p-6 flex justify-center">Pay</button>
+          <button
+            onClick={handleSubmit}
+            className="bg-orange-300 py-2 p-6 flex justify-center"
+          >
+            Pay
+          </button>
         </form>
       )}
     </Formik>
   );
 }
 
-export default Payment
+export default Payment;

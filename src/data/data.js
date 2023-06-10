@@ -1,4 +1,4 @@
-export  const data = [
+export const data = [
   {
     id: 1,
     name: "head chicken",
@@ -160,6 +160,8 @@ export  const data = [
     description: "This is a meal that offer pleasure",
   },
 ];
+
+// localStorage.setItem("foodData", JSON.stringify(data));
 
 // export const categories = [
 //   {

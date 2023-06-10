@@ -6,14 +6,15 @@ import Landing from "./pages/Landing";
 import UserInfos from "./components/UserInfos";
 import Payment from "./components/Payment";
 // import Paypal from "./components/Paypal";
-import Admin from "./pages/Admin";
-import Admins from "./pages/Admins"
-// import { Provider } from "./context/context";
+import AdminLogin from "./pages/AdminLogin";
+import { Provider } from "./context/Context";
+import Admins from "./pages/Admins";
 
 const App = () => {
-  // const [name, setName] = useState('Clint')
+  const [formData, setFormData] = useState("Clint");
+  
   return (
-    // <Provider value={{ name, setName }}>
+    <Provider value={{ formData, setFormData }}>
       <div>
         <Router>
           <div>
@@ -21,20 +22,17 @@ const App = () => {
               <li className="py-4 px-4 text-xl italic">
                 <a href="/">Landing</a>
               </li>
-              <li className="py-4 px-4 text-xl italic">
+              {/* <li className="py-4 px-4 text-xl italic">
                 <a href="/fooddetails/id">FoodDetails</a>
-              </li>
-              <li className="py-4 px-4 text-xl italic">
+              </li> */}
+              {/* <li className="py-4 px-4 text-xl italic">
                 <a href="/userinfos">UserInfos</a>
-              </li>
+              </li> */}
               <li className="py-4 px-4 text-xl italic">
                 <a href="/payment">Payment</a>
               </li>
               <li className="py-4 px-4 text-xl italic">
-                <a href="/admin">Admin</a>
-              </li>
-              <li className="py-4 px-4 text-xl italic">
-                <a href="/admins">Admins</a>
+                <a href="/adminlogin">Admin Login</a>
               </li>
             </ul>
           </div>
@@ -44,13 +42,12 @@ const App = () => {
             <Route path="/userinfos" element={<UserInfos />} />
             <Route path="/payment" element={<Payment />} />
             {/* <Route path="/paypal" element={<Paypal />} /> */}
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/admins" element={<Admins />} />
+            <Route path="/adminlogin" element={<AdminLogin />} />
+            <Route path="/admins" element={<Admins/>}/>
           </Routes>
         </Router>
       </div>
-    // </Provider>
+    </Provider>
   );
 };
 export default App;
-
