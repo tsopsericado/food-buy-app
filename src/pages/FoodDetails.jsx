@@ -18,17 +18,19 @@ function FoodDetails() {
     console.log(" this params", params, params.id);
     const [food] = data.filter((item) => item.id === +params.id);
 
-    setCurrentFood(food);
+    setCurrentFood(food); 
   }, [params]);
 
   return (
-    <div className="flex justify-center border-orange-200 bg-red-200">
-      <p>Order and get delivered in less time</p>
-      <div className="float-left">
+    <div className="justify-center border-orange-200 bg-red-200">
+      <div>
+      <p className="">Order and get delivered in less time</p>
+      </div>
+      <div className="py-5">
         <img
           src={currentFood?.image}
-          height="100"
-          width="250"
+          height="30"
+          width="300"
           className="rounded"
         />
         <ul>

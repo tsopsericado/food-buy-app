@@ -6,7 +6,9 @@ import Food from "../components/Food";
 
 export default function Landing() {
   return (
-    <div className="landing_page">
+    <div
+      className="h-screen w-screen bg-[../public/assets/images/images(3).jpeg]"
+    >
       <Navbar />
       <Hero />
       <HeadlineCards />

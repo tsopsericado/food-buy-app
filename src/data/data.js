@@ -161,6 +161,10 @@ export const data = [
   },
 ];
 
+
+
+
+
 // localStorage.setItem("foodData", JSON.stringify(data));
 
 // export const categories = [

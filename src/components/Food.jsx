@@ -75,7 +75,7 @@ function Food() {
           </div>
         </div>
 
-        {/* {Filter Price} */}
+        {/* {Filter Price}
         <div>
           <p className="font-bold text-gray-700">Filter Price</p>
           <div className="flex justify-between m-w-[390px] w-full">
@@ -96,7 +96,7 @@ function Food() {
               className="m-1 border-orange-600 text-orange hover:bg-orange-600 hover:text-white"
             ></button>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* {Display Foods} */}

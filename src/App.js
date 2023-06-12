@@ -22,12 +22,13 @@ const App = () => {
               <li className="py-4 px-4 text-xl italic">
                 <a href="/">Landing</a>
               </li>
-               <li className="py-4 px-4 text-xl italic">
+              {/* <li className="py-4 px-4 text-xl italic">
                 <a href="/fooddetails/id">FoodDetails</a>
-              </li> 
-               <li className="py-4 px-4 text-xl italic">
+              </li>
+              <li className="py-4 px-4 text-xl italic">
                 <a href="/userinfos">UserInfos</a>
-              </li> *
+              </li> */}
+              
               <li className="py-4 px-4 text-xl italic">
                 <a href="/payment">Payment</a>
               </li>

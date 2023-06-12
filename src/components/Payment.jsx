@@ -2,19 +2,25 @@ import { Formik, Field } from "formik";
 import React, { useEffect, useState } from "react";
 import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
 import { useNavigate, useParams } from "react-router-dom";
+import  { useContext } from "react";
+import { MyContext } from "../context/Context";
 // import { images } from "react-payment-inputs/images"  ;
 
 function Payment() {
+
+   const { formData } = useContext(MyContext);
+   const [Fooditems, setFooditems] =useState([]);
   
   const navigate = useNavigate();
   const [ purchaseFood, setPurchaseFood] = useState({});
-  const { value } = useFooditems();
+  const { value } = setFooditems();
   console.log("value", value)
   const params = useParams()
 
+
 useEffect(()=>{
   const [selectFood] = value.filter 
-  (()=> food.name === params.name)
+  (()=> value.name === params.name)
   setPurchaseFood(selectFood)
 })
 
