@@ -64,7 +64,10 @@ export default function Admins() {
 
     const localData = JSON.parse(localStorage.getItem("foodData")) || [];
 
-    const newData = [...localData, formData];
+    const newId =
+      localData.length > 0 ? localData[localData.length - 1].id + 1 : 1;
+
+    const newData = [...localData, { ...formData, id: newId }];
 
     localStorage.setItem("foodData", JSON.stringify(newData));
 

@@ -10,7 +10,7 @@ function Food() {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    const localData = JSON.parse(localStorage.getItem("foodData"));
+    const localData = JSON.parse(localStorage.getItem("foodData")) || [];
     setFoods([...localData]);
   }, []);
 
@@ -96,7 +96,7 @@ function Food() {
               className="m-1 border-orange-600 text-orange hover:bg-orange-600 hover:text-white"
             ></button>
           </div>
-        </div>  
+        </div>
       </div>
 
       {/* {Display Foods} */}

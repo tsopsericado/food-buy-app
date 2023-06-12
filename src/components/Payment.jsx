@@ -1,9 +1,24 @@
 import { Formik, Field } from "formik";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
+import { useNavigate, useParams } from "react-router-dom";
 // import { images } from "react-payment-inputs/images"  ;
 
 function Payment() {
+  
+  const navigate = useNavigate();
+  const [ purchaseFood, setPurchaseFood] = useState({});
+  const { value } = useFooditems();
+  console.log("value", value)
+  const params = useParams()
+
+useEffect(()=>{
+  const [selectFood] = value.filter 
+  (()=> food.name === params.name)
+  setPurchaseFood(selectFood)
+})
+
+
   const {
     meta,
     getCardImageProps,
@@ -12,6 +27,11 @@ function Payment() {
     getCVCProps,
     wrapperProps,
   } = usePaymentInputs();
+  
+  const handleSubmit = ()=>{
+    navigate ("/")
+ }
+
   return (
     <Formik
       initialValues={{
@@ -44,35 +64,26 @@ function Payment() {
               <Field name="cardNumber">
                 {({ Field }) => (
                   <input
-                    {...getCardNumberProps({
-                      // onblur: Field.onblur,
-                      // onChange: Field.onChange,
-                    })}
-                  />
+                    {...getCardNumberProps({})}/>
                 )}
               </Field>
               <label htmlFor="expirydate">Expiry Data:</label>
               <Field name="expiryDate">
                 {({ field }) => (
                   <input
-                    {...getExpiryDateProps({
-                      // onBlur: field.onBlur,
-                      // onChange: field.onChange,
-                    })}
-                  />
+                    {...getExpiryDateProps({})}/>
                 )}
               </Field>
               <label htmlFor="cvc">CVC:</label>
               <Field name="cvc">
                 {({ field }) => (
                   <input
-                    {...getCVCProps({
-                      // onBlur: field.onBlur,
-                      // onChange: field.onChange,
-                    })}
-                  />
+                    {...getCVCProps({})}
+/>
                 )}
               </Field>
+              <p>Package Name <span className="text-yello-700">{purchaseFood.name}</span></p>
+              <p>Payment Amount <span className="text-yello-500">${purchaseFood.price}</span></p>
             </PaymentInputsWrapper>
           </div>
           <button

@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useContext } from "react";
 import {
   ErrorMessage,
   Formik,
@@ -7,12 +8,15 @@ import {
 } from "formik/dist/formik.cjs.production.min";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { MyContext } from "../context/Context";
 
 function AdminLogin() {
   const initialValues = {
     username: "",
     password: "",
   };
+
+  const { formData } = useContext(MyContext);
 
   const navigate = useNavigate();
   const onSubmit = (values) => {

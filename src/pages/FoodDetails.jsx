@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { data } from "../data/data";
-import { AppContext } from "../context/Context";
+import { AppContext, MyContext } from "../context/Context";
 
 function FoodDetails() {
   // const handleclick = handleClick()
@@ -10,6 +10,9 @@ function FoodDetails() {
   const params = useParams();
   const navigate = useNavigate();
   // const { name } = useContext(AppContext);
+
+  const { formData } = useContext(MyContext);
+
 
   React.useEffect(() => {
     console.log(" this params", params, params.id);
