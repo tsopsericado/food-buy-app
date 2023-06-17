@@ -1,0 +1,29 @@
+.fooddetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-item:center;
+  gap:40px;
+}
+
+.header {
+   display:flex;
+   align-item: center;
+   justify-content: center;
+   font-size:40px;
+   font-weight:800;
+   text-style:itali;
+   font-family:sans-serif;
+   
+}
+
+.image {
+   widht: 30%;
+   heigth: 100px;
+}
+
+.details{
+   border: 3px solid blue;
+   
+}

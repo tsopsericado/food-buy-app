@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import React, { useState } from "react";
-import FoodDetails from "./pages/FoodDetails";
+import FoodDetails from "./components/foodDetails /FoodDetails";
 import Landing from "./pages/Landing";
 import UserInfos from "./components/UserInfos";
 import Payment from "./components/Payment";
@@ -9,6 +9,7 @@ import Payment from "./components/Payment";
 import AdminLogin from "./pages/AdminLogin";
 import { MyContext } from "./context/Context";
 import Admins from "./pages/Admins";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
   const [formData, setFormData] = useState();
@@ -28,7 +29,7 @@ const App = () => {
               <li className="py-4 px-4 text-xl italic">
                 <a href="/userinfos">UserInfos</a>
               </li> */}
-              
+
               <li className="py-4 px-4 text-xl italic">
                 <a href="/payment">Payment</a>
               </li>
@@ -45,6 +46,7 @@ const App = () => {
             {/* <Route path="/paypal" element={<Paypal />} /> */}
             <Route path="/adminlogin" element={<AdminLogin />} />
             <Route path="/admins" element={<Admins />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </Router>
       </div>

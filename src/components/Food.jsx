@@ -13,15 +13,19 @@ function Food() {
     const localData = JSON.parse(localStorage.getItem("foodData")) || [];
     setFoods([...localData]);
   }, []);
+  console.log(foods)
 
   // Filter type all
   const filterType = (category) => {
     setFoods(
       foods.filter((item) => {
         return item.category === category;
+        
       })
     );
   };
+
+  console.log(filterType)
 
   //Filter by Price
   const filterPrice = (price) => {

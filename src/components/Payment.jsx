@@ -2,28 +2,26 @@ import { Formik, Field } from "formik";
 import React, { useEffect, useState } from "react";
 import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
 import { useNavigate, useParams } from "react-router-dom";
-import  { useContext } from "react";
+import { useContext } from "react";
 import { MyContext } from "../context/Context";
-// import { images } from "react-payment-inputs/images"  ;
 
 function Payment() {
+  const { formData } = useContext(MyContext);
+  const [Fooditems, setFooditems] = useState({});
 
-   const { formData } = useContext(MyContext);
-   const [Fooditems, setFooditems] =useState([]);
-  
   const navigate = useNavigate();
-  const [ purchaseFood, setPurchaseFood] = useState({});
-  const { value } = setFooditems();
-  console.log("value", value)
-  const params = useParams()
+  const [purchaseFood, setPurchaseFood] = useState({});
+  // /* console.log("value", value); */
+  const params = useParams();
 
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem("foodData")) || [];
 
-useEffect(()=>{
-  const [selectFood] = value.filter 
-  (()=> value.name === params.name)
-  setPurchaseFood(selectFood)
-})
+    const foodId = +localStorage.getItem("foodToPurchaseId");
 
+    const selectFood = localData.find((food) => food.id === foodId);
+    setPurchaseFood(selectFood);
+  }, []);
 
   const {
     meta,
@@ -33,10 +31,10 @@ useEffect(()=>{
     getCVCProps,
     wrapperProps,
   } = usePaymentInputs();
-  
-  const handleSubmit = ()=>{
-    navigate ("/")
- }
+
+  const handleSubmit = () => {
+    navigate("/");
+  };
 
   return (
     <Formik
@@ -61,40 +59,43 @@ useEffect(()=>{
       }}
     >
       {({ handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
-          <div className="flex bg-red-300 justify-center m-15">
-            <h1 className="mp">Make your payment</h1>
+        <form onSubmit={handleSubmit} className="w-full max-w-sm">
+          <div className="md:flex md:items-center mb-6">
+            <h1 className="text-xl bold">Make your payment</h1>
             <PaymentInputsWrapper {...wrapperProps}>
               <svg {...getCardImageProps({})} />
-              <label htmlFor="cardnum">Card Number:</label>
-              <Field name="cardNumber">
-                {({ Field }) => (
-                  <input
-                    {...getCardNumberProps({})}/>
-                )}
-              </Field>
-              <label htmlFor="expirydate">Expiry Data:</label>
-              <Field name="expiryDate">
-                {({ field }) => (
-                  <input
-                    {...getExpiryDateProps({})}/>
-                )}
-              </Field>
-              <label htmlFor="cvc">CVC:</label>
-              <Field name="cvc">
-                {({ field }) => (
-                  <input
-                    {...getCVCProps({})}
-/>
-                )}
-              </Field>
-              <p>Package Name <span className="text-yello-700">{purchaseFood.name}</span></p>
-              <p>Payment Amount <span className="text-yello-500">${purchaseFood.price}</span></p>
+              <div className="md:w-2/3 px-6">
+                <label htmlFor="cardnum">Card Number:</label>
+                <Field name="cardNumber">
+                  {({ Field }) => <input {...getCardNumberProps({})} />}
+                </Field>
+              </div>
+              <div className="md:w-2/3 px-6">
+                <label htmlFor="expirydate">Expiry Data:</label>
+                <Field name="expiryDate">
+                  {({ field }) => <input {...getExpiryDateProps({})} />}
+                </Field>
+              </div>
+              <div className="md:w-2/3 px-6"> 
+                <label htmlFor="cvc">CVC:</label>
+                <Field name="cvc">
+                  {({ field }) => <input {...getCVCProps({})} />}
+                </Field>
+              </div>
+              <p>
+                Package Name{" "}
+                <span className="text-yello-700">{purchaseFood.name}</span>
+              </p>
+              <p>
+                Payment Amount{" "}
+                <span className="text-yello-500">${purchaseFood.price}</span>
+              </p>
             </PaymentInputsWrapper>
           </div>
           <button
-            onClick={handleSubmit}
-            className="bg-orange-300 py-2 p-6 flex justify-center"
+            type="button"
+            onSubmit={handleSubmit}
+            className="bg-orange-200 py-2"
           >
             Pay
           </button>
