@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AppContext, MyContext } from "../../context/Context";
-import "./FoodDetails";
+import './FoodDetails'
 
 function FoodDetails() {
   // const handleclick = handleClick()
@@ -30,7 +30,7 @@ function FoodDetails() {
   };
 
   return (
-    <div className="fooddetails">
+    <div className="fooddetail">
       <div>
         <p className="header">
           Order and get delivered in less time

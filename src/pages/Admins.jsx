@@ -75,9 +75,9 @@ export default function Admins() {
   };
 
   return (
-    <div>
+    <div className="bg-gradient-to-r from-orange-300 to-orange-100">
       <form
-        className="px-4 py-6 my-32 max-w-3xl mx-auto space-y-6 border-x-orange-500 bg-orange-100"
+        className="px-4 py-6 my-32 max-w-3xl mx-auto space-y-6 border-x-orange-500 bg-orange-200"
         onSubmit={handleFormSubmit}
       >
         <div>

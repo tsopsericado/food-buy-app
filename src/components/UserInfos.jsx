@@ -31,7 +31,7 @@ export default function Login() {
   // };
 
   return (
-    <div className="bg-violet-100">
+    <div className="bg-gradient-to-r from-cyan-500 to-blue-">
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => {
@@ -42,7 +42,7 @@ export default function Login() {
         // onSubmit={handleSubmit}
       >
         {() => (
-          <Form className="px-4 py-6 my-32 max-w-3xl mx-auto space-y-6 border-x-orange-500">
+          <Form className="px-4 py-6  max-w-3xl mx-auto space-y-6 border-x-orange-500">
             <div>
               <h1 className="text-3xl italic bold">Users details </h1>
               <p className="text-xl text-gray-1000">

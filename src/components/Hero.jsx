@@ -13,8 +13,9 @@ function Hero() {
             <span className="text-orange-500">African</span> Flavour
           </h1>
         </div>
-        <img className='w-full max-h-[500px] object-cover' 
-          src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=600"
+        <img
+          className="w-full max-h-[500px] object-cover"
+          src="https://images.pexels.com/photos/1998920/pexels-photo-1998920.jpeg?auto=compress&cs=tinysrgb&w=600"
           alt="/"
         />
       </div>
