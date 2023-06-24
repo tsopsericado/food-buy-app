@@ -1,38 +1,56 @@
-import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import React, { useState } from "react";
+import FoodDetails from "./components/foodDetails /FoodDetails";
+import Landing from "./pages/Landing";
+import UserInfos from "./components/UserInfos";
+import Payment from "./components/Payment";
+// import Paypal from "./components/Paypal";
+import AdminLogin from "./pages/AdminLogin";
+import { MyContext } from "./context/Context";
+import Admins from "./pages/Admins";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
+  const [formData, setFormData] = useState();
+
   return (
-    <>
-    <h1 class="bg-black text-red text-white text-4xl font-bold">Welcome to Africa Flavour Store </h1>
-    </>
-  )
-}
- export default App
+    <MyContext.Provider value={{ formData, setFormData }}>
+      <div>
+        <Router>
+          <div>
+            <ul className="bg-blue-100 flex-row-reverse px-10 flex space-x-3">
+              <li className="py-4 px-4 text-xl italic">
+                <a href="/">Landing</a>
+              </li>
+              {/* <li className="py-4 px-4 text-xl italic">
+                <a href="/fooddetails/id">FoodDetails</a>
+              </li>
+              <li className="py-4 px-4 text-xl italic">
+                <a href="/userinfos">UserInfos</a>
+              </li> */}
 
-
-
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
+              <li className="py-4 px-4 text-xl italic">
+                <a href="/payment">Payment</a>
+              </li>
+              <li className="py-4 px-4 text-xl italic">
+                <a href="/adminlogin">Admin Login</a>
+              </li>
+            </ul>
+          </div>
+          <Routes>
+            <Route index element={<Landing />} />
+            <Route path="/fooddetails/:id" element={<FoodDetails />} />
+            <Route path="/userinfos" element={<UserInfos />} />
+            <Route path="/payment" element={<Payment />} />
+            {/* <Route path="/paypal" element={<Paypal />} /> */}
+            <Route path="/adminlogin" element={<AdminLogin />} />
+            <Route path="/admins" element={<Admins />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+        </Router>
+      </div>
+    </MyContext.Provider>
+  );
+};
+export default App;
