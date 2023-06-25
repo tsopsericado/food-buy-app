@@ -1,0 +1,32 @@
+.paymentdiv{
+background-color:lightblue;
+height:100vh;
+}
+
+.title{
+  display:flex;
+  justify-content:center;
+  font-style:italic;
+  font-size:30px;
+  font-weight:500;
+  padding:25px;
+}
+
+.wrapper {
+  display:flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  height:30vh;  
+  outline:2px solid red;
+  font-style:italic;
+  font-weight:500;
+}
+
+.formfooter{
+  display:flex;
+  justify-content:space-around;
+  gap:20px;
+}
+
+

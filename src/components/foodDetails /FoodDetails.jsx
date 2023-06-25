@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AppContext, MyContext } from "../../context/Context";
-import './FoodDetails'
+import './FoodDetails.css'
 
 function FoodDetails() {
   // const handleclick = handleClick()
@@ -30,36 +30,36 @@ function FoodDetails() {
   };
 
   return (
-    <div className="fooddetail">
+    <div className="bg-gradient-to-r from-cyan-500 to-blue-100 py-10">
       <div>
-        <p className="header">
-          Order and get delivered in less time
-        </p>
+        <p className="header">Order and get delivered in less time</p>
       </div>
-      <div className="details">
-        <img
-          src={currentFood?.image}
-          height="300"
-          width="500"
-          className="image"
-        />
-      </div>
-      <div className="">
-        <ul>
-          <li className="text-xl bold ">Food name: {currentFood?.name}</li>
-          <li className="text-xl bold ">calories:{currentFood?.calories}</li>
-          <li className="text-xl bold ">price: {currentFood?.price}</li>
-          <li className="text-xl bold ">
-            Description: {currentFood?.description}
-          </li>
-        </ul>
-        <button
-          onClick={handlePurchase}
-          type="button"
-          className="bg-orange-400 text-xl bold "
-        >
-          Purchase
-        </button>
+      <div className="food">
+        <div className="details">
+          <img
+            src={currentFood?.image}
+            height="300"
+            width="400"
+            className="image"
+          />
+        </div>
+        <div className="">
+          <ul>
+            <li className="text-xl bold ">Food name: {currentFood?.name}</li>
+            <li className="text-xl bold ">calories:{currentFood?.calories}</li>
+            <li className="text-xl bold ">price: {currentFood?.price}</li>
+            <li className="text-xl bold ">
+              Description: {currentFood?.description}
+            </li>
+          </ul>
+          <button
+            onClick={handlePurchase}
+            type="button"
+            className="bg-orange-400 text-xl bold "
+          >
+            Purchase
+          </button>
+        </div>
       </div>
     </div>
   );

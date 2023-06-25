@@ -16,11 +16,11 @@ const App = () => {
 
   return (
     <MyContext.Provider value={{ formData, setFormData }}>
-      <div>
+      <div className="bg-gradient-to-r from-cyan-500 to-blue-">
         <Router>
           <div>
-            <ul className="bg-blue-100 flex-row-reverse px-10 flex space-x-3">
-              <li className="py-4 px-4 text-xl italic">
+            <ul className="bg-blue-100 flex-row-reverse px-10 py-4 flex space-x-3">
+              <li className="py-4 px-4 text-xl italic bg-white rounded">
                 <a href="/">Landing</a>
               </li>
               {/* <li className="py-4 px-4 text-xl italic">
@@ -30,10 +30,10 @@ const App = () => {
                 <a href="/userinfos">UserInfos</a>
               </li> */}
 
-              <li className="py-4 px-4 text-xl italic">
+              <li className="py-4 px-4 text-xl italic bg-white rounded">
                 <a href="/payment">Payment</a>
               </li>
-              <li className="py-4 px-4 text-xl italic">
+              <li className="py-4 px-4 text-xl italic bg-white rounded ">
                 <a href="/adminlogin">Admin Login</a>
               </li>
             </ul>

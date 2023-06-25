@@ -34,7 +34,7 @@ function AdminLogin() {
   });
 
   return (
-    <div>
+    <div className="bg-gradient-to-r from-violet-300 to-fuchsia-200 py-10">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
