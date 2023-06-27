@@ -102,14 +102,14 @@ function Payment() {
                   </div>
                 </PaymentInputsWrapper>
               </div>
+              <button
+                type="submit"
+                onSubmit={handleSubmit}
+                className="bg-orange-200 "
+              >
+                Pay
+              </button>
             </div>
-            <button
-              type="submit"
-              onSubmit={handleSubmit}
-              className="bg-orange-200 py-2"
-            >
-              Pay
-            </button>
           </form>
         )}
       </Formik>

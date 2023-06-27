@@ -18,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
   height: 5vh;
-  outline: 2px solid red;
+  /* outline: 2px solid red;  */
   font-style: italic;
   font-weight: 500;
 }
@@ -29,9 +29,14 @@
   gap: 20px;
 }
 
-.button {
+button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 100px;
+  padding: 7px 50px;
+  margin:40px 670px;
+}
+
+@media screen {
+  
 }
