@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import { FormContext } from "../context/Context";
+import React, {  useState } from "react";
 
 export default function Admins() {
   const [formData, setFormData] = useState({
@@ -177,7 +176,7 @@ export default function Admins() {
 
         <button
           type="submit"
-          className="border bg-orange-300 py-1.5 px-20 rounded border-violet-600 my-5 focus:outline-none focus:border-teal-500  "
+          className="border bg-orange-300 py-1.5 px-20 rounded border-violet-600 my-5 focus:outline-none focus:border-teal-500"
         >
           Upload Item
         </button>

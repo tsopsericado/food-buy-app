@@ -10,6 +10,11 @@ function FoodDetails() {
   const params = useParams();
   const navigate = useNavigate();
   // const { name } = useContext(AppContext);
+  const handleDelete = (index) => {
+    const updatedItems = [...currentFood];
+    updatedItems.splice(index, 1);
+    setCurrentFood(updatedItems)
+  }
 
   const { formData } = useContext(MyContext);
 
@@ -26,7 +31,7 @@ function FoodDetails() {
   const handlePurchase = () => {
     localStorage.setItem("foodToPurchaseId", params.id);
 
-    navigate("/userinfos");
+    navigate("/userinfos"); 
   };
 
   return (
@@ -45,20 +50,25 @@ function FoodDetails() {
         </div>
         <div className="">
           <ul>
-            <li className="text-xl bold ">Food name: {currentFood?.name}</li>
-            <li className="text-xl bold ">calories:{currentFood?.calories}</li>
-            <li className="text-xl bold ">price: {currentFood?.price}</li>
-            <li className="text-xl bold ">
-              Description: {currentFood?.description}
-            </li>
+            {currentFood.map((item, index) => (
+                          <li className="text-xl bold ">Food name: {currentFood?.name}</li>
+                          <li className="text-xl bold ">calories:{currentFood?.calories}</li>
+                          <li className="text-xl bold ">price: {currentFood?.price}</li>
+                          <li className="text-xl bold ">Description: {currentFood?.description}
+                          </li>
+            ))}
+
           </ul>
           <button
             onClick={handlePurchase}
             type="button"
-            className="bg-orange-400 text-xl bold "
+            className="bg-orange-400 text-xl bold"
           >
             Purchase
           </button>
+            <button className="bg-green-300 text-xl bold mx-5">update</button>
+
+            <button className="bg-red-400 text-xl bold" onClick={() => handleDelete(index)}>delete</button>
         </div>
       </div>
     </div>

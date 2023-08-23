@@ -105,7 +105,7 @@ function Payment() {
               <button
                 type="submit"
                 onSubmit={handleSubmit}
-                className="bg-orange-200 "
+                className="btn"
               >
                 Pay
               </button>

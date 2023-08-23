@@ -45,7 +45,7 @@ function AdminLogin() {
       >
         <Form className="px-4 my-32 max-w-3xl    mx-auto space-y-5">
           <h1 className="text-2xl bold py-2">Admin login infos</h1>
-
+           
           <div className="w-1/2">
             <label htmlFor="label" className="py-2">
               User Name
@@ -95,9 +95,9 @@ function AdminLogin() {
               navigate("/admins");
             }}
             type="button"
-            className="border bg-orange-300 py-1.5 px-20 rounded border-violet-600 my-5 focus:outline-none focus:border-teal-500"
+            className="border bg-orange-300 py-1.5  rounded border-violet-600 my-5 focus:outline-none focus:border-teal-500"
           >
-            sign in
+            sign in 
           </button>
         </Form>
       </Formik>

@@ -6,10 +6,10 @@
 
 .food {
   display: flex;
-  flex-direction: ;
+  flex-direction: column;
   justify-content: space-around;
   text-align: center;
-  align-item: center;
+  align-items: center;
   gap: 40px;
   border: 2px solid lightblue;
   border-radius: 1px 50px;

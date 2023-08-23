@@ -42,8 +42,8 @@ function Navbar() {
       </div>
 
       {/* {cart button}  */}
-      <button className="bg-black text-white hidden md:flex items-center  rounded-full">
-        <BsFillCartFill size={20} className="mr-2" /> cart
+      <button className="bg-black text-white hidden md:flex items-center mr:0 rounded-full">
+        <BsFillCartFill size={20} /> cart
       </button>
 
       {/* {mobile Menu} */}
