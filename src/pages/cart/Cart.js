@@ -16,7 +16,7 @@ const Cart = () => {
     <div className="cart">
       <div>
         {" "}
-        <p className="text-[30px] italic font-bold text-orange-300">
+        <p className="text-[30px] italic font-bold text-orange-500">
           Welcome to your shopping cart
         </p>{" "}
       </div>
