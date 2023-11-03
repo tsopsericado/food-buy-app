@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
 export default function Admins() {
   const [formData, setFormData] = useState({
@@ -74,50 +74,38 @@ export default function Admins() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-orange-300 to-orange-100">
+    <div className="p-4">
       <form
-        className="px-4 py-6 my-32 max-w-3xl mx-auto space-y-6 border-x-orange-500 bg-orange-200"
+        className=" px-4 py-4 w-[35%] mx-auto bg-slate-50 border border-black"
         onSubmit={handleFormSubmit}
       >
-        <div>
-          <h1 className="text-2xl bold">Admin DashBoard</h1>
+        <div className="pb-5">
+          <h1 className="text-[25px] font-bold">Admin DashBoard</h1>
           <p className="text-xl text-blue-600 italic">Create a New Item</p>
         </div>
-        <div className="w-1/2">
-          <label htmlFor="image" className="float-left py-2">
-            Image
-          </label>
-          <input
-            type="file"
-            name="image"
-            placeholder="avatar"
-            onChange={handleImageUpload}
-            className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
-          />
-        </div>
-        <div className="flex space-x-4">
-          <div className="w-1/2">
-            <label htmlFor="name" className="float-left py-2">
+
+        <div className="flex flex-row items-center justify-center w-full gap-4">
+          <div>
+            <label htmlFor="name" className="py-2">
               Name
             </label>
             <input
               name="name"
               placeholder="name"
-              className="border border-gray-400 block  py-2 px-4 w-full rounded  focus:outline-none focus:border-teal-500"
+              className="border border-gray-400 block  py-2 px-4 w-full focus:outline-none focus:border-teal-500"
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, name: e.target.value }))
               }
             />
           </div>
-
-          <div className="w-1/2">
-            <label htmlFor="" className="float-left py-2">
+          <div>
+            <label htmlFor="" className="py-2">
               Category
             </label>
             <input
               name="category"
               placeholder="Category"
-              className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+              className="border border-gray-400 block py-2 px-4 w-full focus:outline-none focus:border-teal-500"
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, category: e.target.value }))
               }
@@ -125,45 +113,47 @@ export default function Admins() {
           </div>
         </div>
 
-        <div>
-          <label htmlFor="price" className="float-left py-2">
-            Price
-          </label>
-          <input
-            name="Price"
-            placeholder="Price"
-            type="number"
-            className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, price: e.target.value }))
-            }
-          />
-        </div>
+        <div className="flex flex-row items-center justify-center w-full gap-4">
+          <div>
+            <label htmlFor="price" className="py-2">
+              Price
+            </label>
+            <input
+              name="Price"
+              placeholder="Price"
+              type="number"
+              className="border border-gray-400 block py-2 px-4 w-full focus:outline-none focus:border-teal-500"
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, price: e.target.value }))
+              }
+            />
+          </div>
 
-        <div className="flex space-x-4">
-          <div className="w-1/2">
-            <label htmlFor="calorie" className="float-left py-2">
+          <div>
+            <label htmlFor="calorie" className=" py-2">
               Calories
             </label>
             <input
               name="calories"
               type="text"
               placeholder="Calories"
-              className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+              className="border border-gray-400 block py-2 px-4 w-full focus:outline-none focus:border-teal-500"
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, calories: e.target.value }))
               }
             />
           </div>
+        </div>
 
-          <div className="w-1/2">
-            <label htmlFor="description" className="float-left py-2">
+        <div>
+          <div>
+            <label htmlFor="description" className="py-2">
               Description
             </label>
             <input
               name="description"
               placeholder="Description"
-              className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+              className="border border-gray-400 block py-2 px-4 w-full  focus:outline-none focus:border-teal-500"
               onChange={(e) =>
                 setFormData((prev) => ({
                   ...prev,
@@ -171,12 +161,26 @@ export default function Admins() {
                 }))
               }
             />
+            <div />
+
+            <div className="w-full">
+              <label htmlFor="image" className="py-2">
+                Image
+              </label>
+              <input
+                type="file"
+                name="image"
+                placeholder="avatar"
+                onChange={handleImageUpload}
+                className="border border-gray-400 block py-2 px-4 w-full focus:outline-none focus:border-teal-500"
+              />
+            </div>
           </div>
         </div>
 
         <button
           type="submit"
-          className="border bg-orange-300 py-1.5 px-20 rounded border-violet-600 my-5 focus:outline-none focus:border-teal-500"
+          className="border font-bold  bg-orange-300 py-1.5 px-20 my-5 focus:outline-none focus:border-teal-500"
         >
           Upload Item
         </button>

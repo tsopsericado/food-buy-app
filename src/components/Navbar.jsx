@@ -9,11 +9,17 @@ import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserFriends, FaWallet } from "react-icons/fa";
 import { MdFavorite, MdHelp } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 //Import
 
 function Navbar() {
   const [nav, setNav] = useState(false);
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/cart");
+  };
+
   return (
     <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4">
       {/* {Left side} */}
@@ -42,9 +48,12 @@ function Navbar() {
       </div>
 
       {/* {cart button}  */}
-      <button className="bg-black text-white hidden md:flex items-center mr:0 rounded-full">
-        <BsFillCartFill size={20} /> cart
-      </button>
+      <a
+        href="/cart"
+        className="border px-3 py-2 bg-black text-white hidden md:flex items-center mr:0 rounded-full"
+      >
+        <BsFillCartFill onClick={handleClick} size={20} /> cart
+      </a>
 
       {/* {mobile Menu} */}
       {/* {overlay} */}
@@ -52,7 +61,7 @@ function Navbar() {
         <div className="bg-black/80 fixed w-full h-screen z-10 top-0 left-0"></div>
       ) : (
         ""
-      )}  
+      )}
       {/* <div className="bg-black/80 fixed w-full h-screen z-10 top-0 left-0"></div> */}
 
       {/* {side drawer menu} */}
@@ -63,7 +72,11 @@ function Navbar() {
             : "fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300     "
         }
       >
-        <AiOutlineClose onClick={()=> setNav(!nav )} size={30} className="absolute right-4 top-4 cursor-pointer" />
+        <AiOutlineClose
+          onClick={() => setNav(!nav)}
+          size={30}
+          className="absolute right-4 top-4 cursor-pointer"
+        />
         <h2 className="text-2xl p-4">
           African<span className="font-bold">Flavour</span>
         </h2>

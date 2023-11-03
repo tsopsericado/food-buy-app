@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
 import { useNavigate, useParams } from "react-router-dom";
 import { useContext } from "react";
-import { MyContext } from "../context/Context";
 import "./Payment.css";
+import { Cartcontext } from "../context/Context";
 
 function Payment() {
-  const { formData } = useContext(MyContext);
+  const { formData } = useContext(Cartcontext);
   const [Fooditems, setFooditems] = useState({});
 
   const navigate = useNavigate();
@@ -102,11 +102,7 @@ function Payment() {
                   </div>
                 </PaymentInputsWrapper>
               </div>
-              <button
-                type="submit"
-                onSubmit={handleSubmit}
-                className="btn"
-              >
+              <button type="submit" onSubmit={handleSubmit} className="btn">
                 Pay
               </button>
             </div>
