@@ -14,6 +14,12 @@ const Cart = () => {
   }, 0);
   return (
     <div className="cart">
+      <div>
+        {" "}
+        <p className="text-[30px] italic font-bold text-orange-300">
+          Welcome to your shopping cart
+        </p>{" "}
+      </div>
       {state.map((item, index) => {
         return (
           <div className="card" key={index}>

@@ -112,7 +112,7 @@ function Food() {
                   // onClick={() => navigate(`/fooddetails/${item.id}`)}
                   className="bg-blue-300 text-white px-2 p-1 rounded-full"
                 >
-                  Add to card
+                  Add to cart
                 </button>
               </div>
             </div>
