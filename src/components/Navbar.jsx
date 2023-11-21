@@ -20,14 +20,29 @@ function Navbar() {
     navigate("/cart");
   };
 
+  const login = () => {
+    navigate("/register");
+  };
+
+  const admin = () => {
+    navigate("/adminlogin");
+  };
+
+  const handlelannding = () => {
+    navigate("/");
+  };
+
   return (
-    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4">
+    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 shadow-2xl">
       {/* {Left side} */}
       <div className="flex items-center">
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
           <AiOutlineMenu size={30} />
         </div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2">
+        <h1
+          onClick={handlelannding}
+          className="text-2xl sm:text-3xl lg:text-4xl px-2 cursor-pointer"
+        >
           African<span className="font-bold">Flavour</span>
         </h1>
         <div className=" lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]">
@@ -48,12 +63,26 @@ function Navbar() {
       </div>
 
       {/* {cart button}  */}
-      <a
-        href="/cart"
-        className="border px-3 py-2 bg-black text-white hidden md:flex items-center mr:0 rounded-full"
-      >
-        <BsFillCartFill onClick={handleClick} size={20} /> cart
-      </a>
+      <div className="flex ">
+        <button
+          onClick={login}
+          className="px-4 py-2 bg-black text-white rounded-full "
+        >
+          login
+        </button>
+        <a
+          href="/cart"
+          className="border px-3 py-2 bg-black text-white hidden md:flex items-center mr:0 rounded-full"
+        >
+          <BsFillCartFill onClick={handleClick} size={20} /> cart
+        </a>
+        <button
+          onClick={admin}
+          className="px-4 py-2 bg-black text-white rounded-full "
+        >
+          Admin
+        </button>
+      </div>
 
       {/* {mobile Menu} */}
       {/* {overlay} */}

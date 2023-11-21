@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from "react";
+import React, { useContext } from "react";  
 import {
   ErrorMessage,
   Formik,
@@ -34,7 +34,7 @@ function AdminLogin() {
   });
 
   return (
-    <div className="bg-gradient-to-r from-violet-300 to-fuchsia-200 py-10">
+    <div className=" ">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -43,25 +43,27 @@ function AdminLogin() {
           resetForm();
         }}
       >
-        <Form className="px-4 my-32 max-w-3xl    mx-auto space-y-5">
-          <h1 className="text-2xl bold py-2">Admin login infos</h1>
+        <Form className="border border-gray-600 shadow-xl w-[30%] mx-auto px-4 rounded mt-[100px]">
+          <h1 className="text-2xl bold py-6 font-bold text-gray-600">
+            ADMIN LOGIN FORM
+          </h1>
 
-          <div className="w-1/2">
+          <div className="">
             <label htmlFor="label" className="py-2">
-              User Name
+              Username
             </label>
             <Field
               type="text"
               name="username"
               placeholder="Username"
-              className="border border-gray-400 block py-2 px-4 w-full rounded 
+              className="border border-gray-400 block py-2 px-4 w-full rounded-full
              bg-blue-100 focus:outline-none focus:border-teal-500"
             />
             <div className="error">
               <ErrorMessage name="username" className="text-red" />
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="">
             <label htmlFor="label" className="py-2">
               Password
             </label>
@@ -69,14 +71,14 @@ function AdminLogin() {
               type="text"
               name="password"
               placeholder="password"
-              className="border border-gray-400 block py-2 px-4 w-full rounded bg-blue-100 focus:outline-none focus:border-teal-500"
+              className="border border-gray-400 block py-2 px-4 w-full rounded-full bg-blue-100 focus:outline-none focus:border-teal-500"
             />
             <div className="error">
               <ErrorMessage name="password" className="text-red" />
             </div>
           </div>
 
-          <div className="w-1/2">
+          <div className="">
             <label htmlFor="password confirmation" className="py-2">
               Password Confirmation
             </label>
@@ -84,7 +86,7 @@ function AdminLogin() {
               type="text"
               name="password confirmation"
               placeholder="password Confirmation"
-              className="border border-gray-400 block py-2 px-4 w-full rounded bg-blue-100 focus:outline-none focus:border-teal-500"
+              className="border border-gray-400 block py-2 px-4 w-full rounded-full bg-blue-100 focus:outline-none focus:border-teal-500"
             />
             <div className="error">
               <ErrorMessage name="password Confirmation" className="text-red" />
@@ -95,7 +97,7 @@ function AdminLogin() {
               navigate("/admins");
             }}
             type="button"
-            className="border bg-orange-300 py-1.5  rounded border-violet-600 my-5 focus:outline-none focus:border-teal-500"
+            className="border bg-gray-600 text-white hover:bg-white hover:text-black font-bold py-2 px-8 rounded-full my-5 focus:outline-none focus:border-teal-500"
           >
             sign in
           </button>

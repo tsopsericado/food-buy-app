@@ -43,7 +43,7 @@ function Food() {
   return (
     <div className="max-w-[1640px] m-auto px-4 py-12">
       <h1 className="text-orange-600 font-bold text-4xl text-center">
-        Top Rated Foods
+        Top Menu
       </h1>
 
       {/* {Filter Row} */}
@@ -103,11 +103,11 @@ function Food() {
                 <p>
                   Price:
                   <span className="bg-orange-500 text-white p-1 rounded-full">
-                    {item.price}
+                    Fcfa. {item.price}
                   </span>
                 </p>
                 <button
-                  type="button"
+                  // type="button"
                   onClick={() => dispatch({ type: "ADD", payload: item })}
                   // onClick={() => navigate(`/fooddetails/${item.id}`)}
                   className="bg-blue-300 text-white px-2 p-1 rounded-full"

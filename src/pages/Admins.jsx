@@ -76,7 +76,7 @@ export default function Admins() {
   return (
     <div className="p-4">
       <form
-        className=" px-4 py-4 w-[35%] mx-auto bg-slate-50 border border-black"
+        className=" px-4 py-4 w-[35%] mx-auto bg-slate-50 border border-black mt-[50px] rounded"
         onSubmit={handleFormSubmit}
       >
         <div className="pb-5">
@@ -180,7 +180,7 @@ export default function Admins() {
 
         <button
           type="submit"
-          className="border font-bold  bg-orange-300 py-1.5 px-20 my-5 focus:outline-none focus:border-teal-500"
+          className="border bg-gray-600 text-white hover:bg-white hover:text-black font-bold py-2 px-8 rounded-full my-5 focus:outline-none focus:border-teal-500"
         >
           Upload Item
         </button>
