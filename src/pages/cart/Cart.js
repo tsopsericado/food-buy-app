@@ -12,17 +12,18 @@ const Cart = () => {
   const total = state.reduce((total, item) => {
     return total + item.price * item.quantity;
   }, 0);
+
   return (
     <div className="cart">
       <div>
-        {" "}
         <p className="text-[30px] italic font-bold text-orange-500">
           Welcome to your shopping cart
-        </p>{" "}
+        </p>
       </div>
       {state.map((item, index) => {
         return (
           <div className="card" key={index}>
+            {/* <h2 className="text-orange-600">This is your basket </h2> */}
             <img src={item.image} alt="" />
             <p>{item.title}</p>
             <p>{item.quantity * item.price}</p>

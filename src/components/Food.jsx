@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Cartcontext } from "../context/Context";
 
-function Food() {
+const Food = () => {
   let navigate = useNavigate();
 
   function navig() {
@@ -20,25 +20,24 @@ function Food() {
   const dispatch = Globalstate.dispatch;
   console.log(Globalstate);
 
-  // Filter type all
-  const filterType = (category) => {
-    setFoods(
-      foods.filter((item) => {
-        return item.category === category;
-      })
-    );
-  };
+  // const filterType = (category) => {
+  //   setFoods(
+  //     foods.filter((item) => {
+  //       return item.category === category;
+  //     })
+  //   );
+  // };
 
-  console.log(filterType);
+  // console.log(filterType);
 
-  //Filter by Price
-  const filterPrice = (price) => {
-    setFoods(
-      foods.filter((item) => {
-        return item.price === price;
-      })
-    );
-  };
+  // Filter by Price
+  // const filterPrice = (price) => {
+  //   setFoods(
+  //     foods.filter((item) => {
+  //       return item.price === price;
+  //     })
+  //   );
+  // };
 
   return (
     <div className="max-w-[1640px] m-auto px-4 py-12">
@@ -46,14 +45,12 @@ function Food() {
         Top Menu
       </h1>
 
-      {/* {Filter Row} */}
-      <div className="flex flex-col lg:flex-row justify-between">
-        {/* {Filter Type} */}
+      {/* <div className="flex flex-col lg:flex-row justify-between">
         <div>
           <p className="font-bold text-gray-700">Filter Type</p>
           <div className="flex justify-between flex-wrap">
             <button
-              // onClick={() => setFoods(data)}
+              onClick={() => setFoods(data)}
               className="m-1 border-orange-600 text-orange hover:bg-orange-600 hover:text-white"
             >
               All
@@ -82,7 +79,7 @@ function Food() {
             ></button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* {Display Foods} */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
@@ -95,7 +92,7 @@ function Food() {
             >
               <img
                 src={item.image}
-                alt={item.name}
+                alt=""
                 className="w-full h-[200px] object-cover rounded-t-lg"
               />
               <div className="flex justify-between px-2 py-4">
@@ -107,7 +104,6 @@ function Food() {
                   </span>
                 </p>
                 <button
-                  // type="button"
                   onClick={() => dispatch({ type: "ADD", payload: item })}
                   // onClick={() => navigate(`/fooddetails/${item.id}`)}
                   className="bg-blue-300 text-white px-2 p-1 rounded-full"
@@ -121,6 +117,6 @@ function Food() {
       </div>
     </div>
   );
-}
+};
 
 export default Food;
